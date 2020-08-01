@@ -6,12 +6,3 @@ Każdy element quizu mieści się w osobnym oknie które można dowolnie otwiera
 
 Autor: Antoni Przesławski
 2020
-
-[EN]
-The whole quiz was projected in Windows 95/98 style. 
-The desktop is fully functional and allows you to open windows.
-Taskbar contains a functional Start Menu, working clock, and allows you to reopen minimalized windows.
-Every element of the quiz is placed in a separate window, which you can open, close, and minimalize.
-
-Author: Antoni Przesławski
-2020
