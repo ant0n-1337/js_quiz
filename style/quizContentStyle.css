@@ -1,0 +1,42 @@
+#quizForm{
+    display: none;
+
+    position: relative;
+    margin-top: 5%;
+}
+
+fieldset{
+    padding: 12px;
+    margin: 5px;
+}
+
+#quizHeader{
+    font-size: 1.4em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#quizButton{
+    position: relative;
+   
+    width: 20%;
+    height: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+   
+    left: 39%;
+   
+    border-style: outset;
+    border-width: 3px;
+   
+    text-align: center;
+    font-size: 1.4em;
+}
+
+#quizButton:active{
+    border-style: inset;
+}
+
+.quizAnswer{
+    margin: 7px;
+}

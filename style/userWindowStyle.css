@@ -1,0 +1,130 @@
+#userWindow{
+    width: 33%;
+    height: 50%;
+
+    position: absolute;
+    top: 22%;
+    left: 33%;
+
+    border-style: outset;
+
+    background-color: #c0c0c0;
+
+    letter-spacing: 1px;
+
+    display: none;
+}
+
+#mainUserWindow{
+    border-style: inset;
+
+    position: relative;
+
+    top: 2.5%;
+    left: 1.75%;
+
+    width: 95%;
+    height: 87%;
+}
+
+#userTitleBar{
+    background-image: linear-gradient(to right, #000080, #1084d0);
+    color: #ffffff;
+
+    width: 100%;
+
+}
+
+#userTitleText{
+    position: relative;
+    font-size: 0.8em;
+    left: 1.7%;
+}
+
+#userCloseButton{
+    position: relative;
+    display: inline-block;
+    width: 3%;    
+    left: 64%;
+
+    margin-bottom: 4px;
+    padding-left: 1px;
+
+    border-style: outset;
+
+    text-align: center;
+    font-size: 0.66em;
+    font-weight: bolder;
+    color: #000000;
+    
+    background-color: #c0c0c0;
+    
+    cursor: pointer;
+}
+
+#userMinButton{
+    position: relative;
+    display: inline-block;
+    width: 3%;    
+    left: 64%;
+
+    margin-bottom: 4px;
+    padding-left: 1px;
+
+    border-style: outset;
+
+    text-align: center;
+    font-size: 0.66em;
+    font-weight: bolder;
+    color: #000000;
+    
+    background-color: #c0c0c0;
+
+    cursor: pointer;
+}
+
+#minButton:active{
+    border-style: inset;
+}
+
+#inputField{
+    margin: 2%;
+
+    height: auto;
+    width: auto;
+
+    position: absolute;
+    top: 19%;
+    left: 28%;
+}
+
+#userInputLabel{
+    font-size: 0.7em;
+}
+
+input[type=text]{
+    border-style: inset;
+    border-width: 3px;
+    padding: 1%;
+}
+
+#submitName{
+    position: relative;
+
+    width: 50%;
+    height: auto;
+    padding: 2%;
+
+    top: 15px;
+    left: 22%;
+
+    border-style: outset;
+    border-width: 3px;
+
+    text-align: center;
+    font-size: 0.85em;
+}
+
+#submitName:active{
+    border-style: inset;
+}

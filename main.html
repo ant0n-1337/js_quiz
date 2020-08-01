@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+
+    <link rel="stylesheet" href="style\mainStyle.css">
+    <link rel="stylesheet" href="style\fontStyle.css">
+    <link rel="stylesheet" href="style\taskbarStyle.css">
+    <link rel="stylesheet" href="style\desktopStyle.css">
+    <link rel="stylesheet" href="style\responsive.css">
+    <link rel="stylesheet" href="style\userWindowStyle.css">
+    <link rel="stylesheet" href="style\readmeWindowStyle.css">
+    <link rel="stylesheet" href="style\quizWindowStyle.css">
+    <link rel="stylesheet" href="style\quizContentStyle.css">
+
+    <script src="scripts\windowManagement.js"></script>
+    <script src="scripts\quizScript.js"></script>
+</head>
+<body>
+    <div id='desktop'>
+        <div id="desktopIcons">
+            <div class="computerIcon">
+                <img src='img\computer_logo.png' class='icon' id='userIcon' ondblclick="openUserWindow()">
+                <span id='userLabel'>User</span>
+            </div>
+            <div class="computerIcon">
+                <img src='img\readme_icon.png' class='icon' id='readmeIcon' ondblclick="openReadmeWindow()">
+                <span id='readmeLabel'>Read Me</span>
+            </div>
+            <div class="computerIcon">
+                <img src='img\quiz_icon.png' class='icon' id='quizIcon' ondblclick="openQuizWindow(); setHeader()">
+                <span id='quizLabel'>Start Quiz</span>
+            </div>
+        </div>
+    </div>
+
+    <div id='taskBar'>
+        <div id="startButton">
+            <table>
+                <tr>
+                    <td>
+                        <img src='img\win95_logo.png' id='win95_logo'>
+                        <span id='startText'>Start</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="minimizedUserWindow" onclick="document.getElementById('userWindow').style.display =  'block' ">
+            <table>
+                <tr>
+                    <td>
+                        <img src='img\computer_logo.png' id='user_logo'>
+                        <span id='minUserLabel'>User settings</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="minimizedReadmeWindow" onclick="document.getElementById('readmeWindow').style.display =  'block' ">
+            <table>
+                <tr>
+                    <td>
+                        <img src='img\readme_icon.png' id='readme_logo'>
+                        <span id='minReadmeLabel'>Read Me</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="minimizedQuizWindow" onclick="document.getElementById('quizWindow').style.display =  'block' ">
+            <table>
+                <tr>
+                    <td>
+                        <img src='img\quiz_icon.png' id='quiz_logo'>
+                        <span id='minQuizLabel'>Quiz</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="clockPlace">
+            <div id='clock'>
+                <span id='time'>xx:xx</span><span id='AmPm'> AM</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="userWindow">
+        <div id='userTitleBar'>
+            <span id='userTitleText'>User settings</span>
+
+            <div id='userMinButton' onclick="document.getElementById('userWindow').style.display =  'none' ">
+                _
+            </div>
+
+            <div id='userCloseButton' onclick="closeUserWindow()">
+                X
+            </div>
+            
+        </div>
+        <div id='mainUserWindow'>
+            <div id='inputField'>
+                <span id='userInputLabel'>Input your name: </span><br>
+                <input type='text' id='name'><br>
+                <span id='userInputLabel'>Input your surname: </span><br>
+                <input type='text' id='surname'>
+
+                <div id='submitName' onclick="getNames()">
+                    <span id='submitText'>Save</span>
+                </div>
+                <p id='test'></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="readmeWindow">
+        <div id='readmeTitleBar'>
+            <span id='readmeTitleText'>Read Me</span>
+
+            <div id='rmMinButton' onclick="document.getElementById('readmeWindow').style.display =  'none' ">
+                _
+            </div>
+
+            <div id='rmCloseButton' onclick="closeReadmeWindow()">
+                X
+            </div>
+            
+        </div>
+        <div id='mainReadmeWindow'>
+                [PL]<br>
+                Caly quiz zaprojektowany zostal w stylistyce systemow Windows 95/Windows 98.
+                Pulpit jest w pelni funkcjonalny i pozwala otwierac okna.
+                Pasek zadan pozwala na otwieranie zminimalizowanych okien.
+                Kazdy element quizu miesci sie w osobnym oknie ktore mozna dowolnie otwierac, zamykac, i minimalizowac.
+                <br><br>
+                Autor: Antoni Przeslawski<br>
+                2020
+        </div>
+    </div>
+
+    <div id="quizWindow">
+        <div id='quizTitleBar'>
+            <span id='quizTitleText'>Quiz</span>
+
+            <div id='quizMinButton' onclick="document.getElementById('quizWindow').style.display =  'none' ">
+                _
+            </div>
+
+            <div id='quizCloseButton' onclick="closeQuizWindow()">
+                X
+            </div>
+            
+        </div>
+        <div id='mainQuizWindow'>
+            <p id='quizHeader'> </p>
+            <div id='quizButton' onclick='startQuiz()'>
+                <span id='startQuizText'>Start quiz</span>
+            </div>
+
+            <form id='quizForm'>
+                <fieldset>
+                    <legend>W ktorym roku powstal JavaScript</legend>
+                    <input type='radio' name='que1' class='quizAnswer' id='q1a1'>
+                    <span class='answerLabel' id='q1a1_label'>1993</span>
+                    <input type='radio' name='que1' class='quizAnswer' id='q1a2'>
+                    <span class='answerLabel' id='q1a2_label'>2001</span>
+                    <input type='radio' name='que1' class='quizAnswer' id='q1a3'>
+                    <span class='answerLabel' id='q1a3_label'>1995</span>
+                    <input type='radio' name='que1' class='quizAnswer' id='q1a4'>
+                    <span class='answerLabel' id='q1a4_label'>1998</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Ktorej funkcji uzyjemy aby otrzymac 16 podniesione do potegi 2?</legend>
+                    <input type='radio' name='que2' class='quizAnswer' id='q2a1'>
+                    <span class='answerLabel' id='q2a1_label'>Math.PI</span>
+                    <input type='radio' name='que2' class='quizAnswer' id='q2a2'>
+                    <span class='answerLabel' id='q2a2_label'>Math.sqrt(16)</span>
+                    <input type='radio' name='que2' class='quizAnswer' id='q2a3'>
+                    <span class='answerLabel' id='q2a3_label'>Math.cbrt(16)</span>
+                    <input type='radio' name='que2' class='quizAnswer' id='q2a4'>
+                    <span class='answerLabel' id='q2a4_label'>Wszystkie powyzsze</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Jaka firma stworzyla JavaScript?</legend>
+                    <input type='radio' name='que3' class='quizAnswer' id='q3a1'>
+                    <span class='answerLabel' id='q3a1_label'>Microsoft</span>
+                    <input type='radio' name='que3' class='quizAnswer' id='q3a2'>
+                    <span class='answerLabel' id='q3a2_label'>Mozilla</span>
+                    <input type='radio' name='que3' class='quizAnswer' id='q3a3'>
+                    <span class='answerLabel' id='q3a3_label'>Netscape</span>
+                    <input type='radio' name='que3' class='quizAnswer' id='q3a4'>
+                    <span class='answerLabel' id='q3a4_label'>Apple</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Na ile sposobow można umiescic kod JavaScript w kodzie HTML?</legend>
+                    <input type='radio' name='que4' class='quizAnswer' id='q4a1'>
+                    <span class='answerLabel' id='q4a1_label'>5</span>
+                    <input type='radio' name='que4' class='quizAnswer' id='q4a2'>
+                    <span class='answerLabel' id='q4a2_label'>1</span>
+                    <input type='radio' name='que4' class='quizAnswer' id='q4a3'>
+                    <span class='answerLabel' id='q4a3_label'>3</span>
+                    <input type='radio' name='que4' class='quizAnswer' id='q4a4'>
+                    <span class='answerLabel' id='q4a4_label'>2</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Czy JavaScript jest jakkolwiek powiazany z Java?</legend>
+                    <input type='radio' name='que5' class='quizAnswer' id='q5a1'>
+                    <span class='answerLabel' id='q5a1_label'>Tak</span>
+                    <input type='radio' name='que5' class='quizAnswer' id='q5a2'>
+                    <span class='answerLabel' id='q5a2_label'>Nie</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Ktorego operatora uzyjemy aby uzyskac reszte z dzielenia a=2137 przez b=420</legend>
+                    <input type='radio' name='que6' class='quizAnswer' id='q6a1'>
+                    <span class='answerLabel' id='q6a1_label'>a%b</span>
+                    <input type='radio' name='que6' class='quizAnswer' id='q6a2'>
+                    <span class='answerLabel' id='q6a2_label'>a*b</span>
+                    <input type='radio' name='que6' class='quizAnswer' id='q6a3'>
+                    <span class='answerLabel' id='q6a3_label'>b/a</span>
+                    <input type='radio' name='que6' class='quizAnswer' id='q6a4'>
+                    <span class='answerLabel' id='q6a4_label'>a==b</span>
+                </fieldset>
+                <fieldset>
+                    <legend>W ktorym z tych miejsc mozna umiescic skrypt JS?</legend>
+                    <input type='radio' name='que7' class='quizAnswer' id='q7a1'>
+                    <span class='answerLabel' id='q7a1_label'>Wewnatrz znacznika head</span>
+                    <input type='radio' name='que7' class='quizAnswer' id='q7a2'>
+                    <span class='answerLabel' id='q7a2_label'>Wewnatrz znacznika body</span>
+                    <br>
+                    <input type='radio' name='que7' class='quizAnswer' id='q7a3'>
+                    <span class='answerLabel' id='q7a3_label'>Obie odpowiedzi sa prawidlowe</span>
+                    <input type='radio' name='que7' class='quizAnswer' id='q7a4'>
+                    <span class='answerLabel' id='q7a4_label'>Zadna odpowiedz nie jest prawidlowa</span>
+                </fieldset>
+                <fieldset>
+                    <legend>W jaki sposob nalezy podlaczyc zewnetrzny skrypt JS w znaczniku script?</legend>
+                    <input type='radio' name='que8' class='quizAnswer' id='q8a1'>
+                    <span class='answerLabel' id='q8a1_label'>script src='xxxx.js'</span>
+                    <input type='radio' name='que8' class='quizAnswer' id='q8a2'>
+                    <span class='answerLabel' id='q8a2_label'>script href='xxxx.js'y</span>
+                    <input type='radio' name='que8' class='quizAnswer' id='q8a3'>
+                    <span class='answerLabel' id='q8a3_label'>script link='xxxx.js'</span>
+                    <input type='radio' name='que8' class='quizAnswer' id='q8a4'>
+                    <span class='answerLabel' id='q8a4_label'>script name='xxxx.js'</span>
+                </fieldset>
+                <fieldset>
+                    <legend>W jaki sposob oznacza sie komentarze w JavaScripcie?</legend>
+                    <input type='radio' name='que9' class='quizAnswer' id='q9a1'>
+                    <span class='answerLabel' id='q9a1_label'>``tresc komentarza``</span>
+                    <input type='radio' name='que9' class='quizAnswer' id='q9a2'>
+                    <span class='answerLabel' id='q9a2_label'>//tresc komentarza</span>
+                    <input type='radio' name='que9' class='quizAnswer' id='q9a3'>
+                    <span class='answerLabel' id='q9a3_label'>!-tresc komentarza-!</span>
+                    <input type='radio' name='que9' class='quizAnswer' id='q9a4'>
+                    <span class='answerLabel' id='q9a4_label'>--tresc komentarza-</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Jak deklaruje sie zmienne w JS?</legend>
+                    <input type='radio' name='que10' class='quizAnswer' id='q10a1'>
+                    <span class='answerLabel' id='q10a1_label'>variable nazwazmiennej</span>
+                    <input type='radio' name='que10' class='quizAnswer' id='q10a2'>
+                    <span class='answerLabel' id='q10a2_label'>var nazwazmiennej</span>
+                    <input type='radio' name='que10' class='quizAnswer' id='q10a3'>
+                    <span class='answerLabel' id='q10a3_label'>vr nazwazmiennej</span>
+                    <input type='radio' name='que10' class='quizAnswer' id='q10a4'>
+                    <span class='answerLabel' id='q10a4_label'>vrb nazwazmiennej</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Jak wypisac wartosc zmiennej w konsoli przegladarki?</legend>
+                    <input type='radio' name='que11' class='quizAnswer' id='q11a1'>
+                    <span class='answerLabel' id='q11a1_label'>console.write(zmienna)</span>
+                    <input type='radio' name='que11' class='quizAnswer' id='q11a2'>
+                    <span class='answerLabel' id='q11a2_label'>log(zmienna)</span>
+                    <input type='radio' name='que11' class='quizAnswer' id='q11a3'>
+                    <span class='answerLabel' id='q11a3_label'>console(zmienna)</span>
+                    <input type='radio' name='que11' class='quizAnswer' id='q11a4'>
+                    <span class='answerLabel' id='q11a4_label'>console.log(zmienna)</span>
+                </fieldset>
+                <fieldset>
+                    <legend>W ktorym miejscu tego kodu jest blad? if (x == 10)</legend>
+                    <input type='radio' name='que12' class='quizAnswer' id='q12a1'>
+                    <span class='answerLabel' id='q12a1_label'>W tym kodzie nie ma bledu</span>
+                    <input type='radio' name='que12' class='quizAnswer' id='q12a2'>
+                    <span class='answerLabel' id='q12a2_label'>Zle uzyte wyrazenie warunkowe if</span>
+                    <br>
+                    <input type='radio' name='que12' class='quizAnswer' id='q12a3'>
+                    <span class='answerLabel' id='q12a3_label'>Uzyty zly operator miedzy x a 10</span>
+                    <input type='radio' name='que12' class='quizAnswer' id='q12a4'>
+                    <span class='answerLabel' id='q12a4_label'>Obie odpowiedzi sa prawidlowe</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Ktora metoda sluzy do zyskania obecnego dnia tygodnia?</legend>
+                    <input type='radio' name='que13' class='quizAnswer' id='q13a1'>
+                    <span class='answerLabel' id='q13a1_label'>getDay()</span>
+                    <input type='radio' name='que13' class='quizAnswer' id='q13a2'>
+                    <span class='answerLabel' id='q13a2_label'>getDate()</span>
+                    <input type='radio' name='que13' class='quizAnswer' id='q13a3'>
+                    <span class='answerLabel' id='q13a3_label'>DayOfWeek()</span>
+                    <input type='radio' name='que13' class='quizAnswer' id='q13a4'>
+                    <span class='answerLabel' id='q13a4_label'>getWeekDay()</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Co sie stanie jesli uruchomimy nieskonczona petle?</legend>
+                    <input type='radio' name='que14' class='quizAnswer' id='q14a1'>
+                    <span class='answerLabel' id='q14a1_label'>Elektrownia atomowa w Czarnobylu ponownie wybuchnie</span>
+                    <br>
+                    <input type='radio' name='que14' class='quizAnswer' id='q14a2'>
+                    <span class='answerLabel' id='q14a2_label'>Nic sie nie stanie</span>
+                    <input type='radio' name='que14' class='quizAnswer' id='q14a3'>
+                    <span class='answerLabel' id='q14a3_label'>Zawiesi sie przegladarka</span>
+                    <br>
+                    <input type='radio' name='que14' class='quizAnswer' id='q14a4'>
+                    <span class='answerLabel' id='q14a4_label'>Zadna odpowiedz nie jest prawidlowa</span>
+                </fieldset>
+                <fieldset>
+                    <legend>Czy JavaScript odroznia wielkie i male litery?</legend>
+                    <select id='que15'>
+                        <option id='q15_placeholder'>--------</option>
+                        <option id='q15a1'>Tak</option>
+                        <option id='q15a2'>Nie</option>
+                    </select>
+                </fieldset>            
+                
+                <div id='quizButton' onclick='endQuiz()'>
+                    <span id='startQuizText'>End quiz</span>
+                </div>
+            </form>
+
+            <div id='results'>
+                <p id='pointsResults'></p>
+                <p id='gradeResult'></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

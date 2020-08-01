@@ -1,0 +1,57 @@
+@media only screen and (max-width: 1280px){
+    #startButton{
+        min-width: 10%;
+        max-width: 10%;
+        min-height: 70%;
+        max-height: 70%;
+    
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        left: 0.6%;
+    }
+
+    #startText{
+        position: absolute;
+        
+        font-size: 1rem;
+        letter-spacing: 1px;
+    
+        top: 11%;
+    }
+
+    .icon{
+        width: 64px;
+        height: 64px;
+    
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #userLabel{
+        font-size: 0.8em;
+        position: relative;
+        left: 2.8%;
+    }
+
+    #readmeLabel{
+        font-size: 0.8em;
+        color: #ffffff;
+        font-weight: 100;
+        
+        position: relative;
+        left: 1.7%;
+    }
+
+    #quizLabel{
+        font-size: 0.8em;
+        color: #ffffff;
+        font-weight: 100;
+        
+        position: relative;
+        left: 1.7%;
+    }
+
+    
+}

@@ -1,0 +1,109 @@
+#readmeWindow{
+    width: 33%;
+    height: 50%;
+
+    position: absolute;
+    top: 22%;
+    left: 33%;
+
+    border-style: outset;
+
+    background-color: #c0c0c0;
+
+    letter-spacing: 1px;
+
+    display: none;
+}
+
+#mainWindow{
+    border-style: inset;
+
+    position: relative;
+
+    top: 2.5%;
+    left: 1.75%;
+
+    width: 95%;
+    height: 87%;
+}
+
+#readmeTitleBar{
+    background-image: linear-gradient(to right, #000080, #1084d0);
+    color: #ffffff;
+
+    width: 100%;
+
+}
+
+#readmeTitleText{
+    position: relative;
+    font-size: 0.8em;
+    left: 1.7%;
+}
+
+#rmCloseButton{
+    position: relative;
+    display: inline-block;
+    width: 3%;    
+    left: 71.2%;
+
+    margin-bottom: 4px;
+    padding-left: 1px;
+
+    border-style: outset;
+
+    text-align: center;
+    font-size: 0.66em;
+    font-weight: bolder;
+    color: #000000;
+    
+    background-color: #c0c0c0;
+    
+    cursor: pointer;
+}
+
+#rmMinButton{
+    position: relative;
+    display: inline-block;
+    width: 3%;    
+    left: 71.2%;
+
+    margin-bottom: 4px;
+    padding-left: 1px;
+
+    border-style: outset;
+
+    text-align: center;
+    font-size: 0.66em;
+    font-weight: bolder;
+    color: #000000;
+    
+    background-color: #c0c0c0;
+
+    cursor: pointer;
+}
+
+#rmMinButton:active{
+    border-style: inset;
+}
+
+#rmCloseButton:active{
+    border-style: inset;
+}
+
+#mainReadmeWindow{
+    position: absolute;
+    display: inline-block;
+    height: 86%;
+    width: 94.5%;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    font-size: 0.8em;
+
+    padding: 1%;
+    margin: 1%;
+    border-style: inset;
+}
+

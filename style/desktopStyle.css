@@ -1,0 +1,44 @@
+#desktop{
+    position: absolute;
+    width: 100%;
+    height: 95%;
+}
+
+.icon{
+    width: 48px;
+    height: 48px;
+
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: block;
+    cursor: pointer; 
+}
+
+#userLabel{
+    font-size: 0.7em;
+    color: #ffffff;
+    font-weight: 100;
+    
+    position: relative;
+    left: 2%;
+}
+
+#readmeLabel{
+    font-size: 0.7em;
+    color: #ffffff;
+    font-weight: 100;
+    
+    position: relative;
+    left: 1.1%;
+}
+
+#quizLabel{
+    font-size: 0.7em;
+    color: #ffffff;
+    font-weight: 100;
+    
+    position: relative;
+    left: 1.1%;
+}

@@ -1,0 +1,11 @@
+body{
+    background-color: #007f80;
+    font-family: 'pix M 8pt';
+    margin: 0;
+
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
